@@ -23,3 +23,15 @@
   margin: 0;
   box-sizing: border-box;
 }
+.d-flex {
+  display: flex;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.align-center {
+  align-items: center;
+}
+.ml-3{
+  margin-left: .3rem;
+}

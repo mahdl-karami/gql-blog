@@ -5,11 +5,13 @@ import Header from "./Header";
 import Footer from "./Footer";
 const Layout = () => {
   return (
-    <div>
+    <>
       <Header />
-      <Outlet />
+      <div style={{ minHeight: "80vh" }}>
+        <Outlet />
+      </div>
       <Footer />
-    </div>
+    </>
   );
 };
 
