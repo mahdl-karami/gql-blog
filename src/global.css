@@ -32,6 +32,14 @@
 .align-center {
   align-items: center;
 }
-.ml-3{
-  margin-left: .3rem;
+.ml-3 {
+  margin-left: 0.3rem;
+}
+.container {
+  width: 80%;
+  margin: 2rem auto;
+}
+a{
+  color: #fff;
+  text-decoration: none;
 }
