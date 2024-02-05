@@ -23,6 +23,9 @@
   margin: 0;
   box-sizing: border-box;
 }
+body {
+  overflow-x: hidden;
+}
 .d-flex {
   display: flex;
 }
@@ -38,7 +41,7 @@
 .container {
   margin: 2rem auto;
 }
-a{
+a {
   color: #fff;
   text-decoration: none;
 }

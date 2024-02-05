@@ -11,7 +11,7 @@ const BlogsSidebar = () => {
   const { data, loading, error } = useQuery(BLOG_SIDEBAR_QUERY);
 
   if (error) {
-    return <Error error={error} />
+    return <Error error={error} />;
   }
 
   if (loading) {
@@ -35,7 +35,7 @@ const BlogsSidebar = () => {
         </>
       )}
     </aside>
-  )
+  );
 };
 
 export default BlogsSidebar;

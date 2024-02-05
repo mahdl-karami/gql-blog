@@ -11,30 +11,37 @@ function BlogsAuthor(props) {
   const { loading = false } = props;
   const { author = undefined } = props;
   return (
-    <Card sx={{ m: 2 }}>
-      <Link to="/blogs/author">
-        <CardHeader
-          avatar={
-            loading ? (
-              <Skeleton animation="wave" variant="circular" width={40} height={40} />
-            ) : (
-              // ! Author Avatar
-              <Avatar alt="Author Avatar" src={author.avatar.url} />
-            )
-          }
-          // ! Author Name
-          title={
-            loading ? (
-              <Skeleton animation="wave" height={10} width="80%" style={{ marginBottom: 6 }} />
-            ) : (
-              <span style={{ color: "#212121" }}>{author.name}</span>
-            )
-          }
-          // ! Author Fild
-          subheader={loading ? <Skeleton animation="wave" height={10} width="40%" /> : author.fild ? author.fild : "Is not specified"}
-        />
-      </Link>
-    </Card>
+    <>
+      <Card sx={{ m: 2, display: { xs: "none", md: "block" }}}>
+        <Link to="/blogs/author">
+          <CardHeader
+            avatar={
+              loading ? (
+                <Skeleton animation="wave" variant="circular" width={40} height={40} />
+              ) : (
+                // ! Author Avatar
+                <Avatar alt="Author Avatar" src={author.avatar.url} />
+              )
+            }
+            // ! Author Name
+            title={
+              loading ? (
+                <Skeleton animation="wave" height={10} width="80%" style={{ marginBottom: 6 }} />
+              ) : (
+                <span style={{ color: "#212121" }}>{author.name}</span>
+              )
+            }
+            // ! Author Fild
+            subheader={loading ? <Skeleton animation="wave" height={10} width="40%" /> : author.fild ? author.fild : "Is not specified"}
+          />
+        </Link>
+      </Card>
+      <Card sx={{ m: 2, p: ".4rem" , width: "fit-content", display: {xs: "flex" , md: "none" } }}>
+        <Link to="/blogs/author">
+          {loading ? <Skeleton animation="wave" variant="circular" width={40} height={40} /> : <img src={author.avatar.url} style={{width : "50px"}} />}
+        </Link>
+      </Card>
+    </>
   );
 }
 
