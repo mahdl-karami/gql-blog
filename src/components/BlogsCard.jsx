@@ -11,7 +11,7 @@ import Typography from "@mui/material/Typography";
 import Skeleton from "@mui/material/Skeleton";
 import Button from "@mui/material/Button";
 
-function BlogCard(props) {
+function BlogsCard(props) {
   const { loading = false } = props;
   const { post = undefined } = props;
   return (
@@ -68,8 +68,8 @@ function BlogCard(props) {
   );
 }
 
-BlogCard.propTypes = {
+BlogsCard.propTypes = {
   loading: PropTypes.bool,
 };
 
-export default BlogCard;
+export default BlogsCard;

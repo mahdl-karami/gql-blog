@@ -1,5 +1,5 @@
 // ! Import Components
-import BlogCard from "./BlogCard";
+import BlogsCard from "./BlogsCard";
 import Error from "./Error";
 import Loading from "./Loading";
 // ! Import GraphQL
@@ -20,7 +20,7 @@ const BlogsSection = () => {
       <section style={{ width: "80%" }}>
         <Loading />
         {skeletonCount.map((index) => (
-          <BlogCard key={index} loading />
+          <BlogsCard key={index} loading />
         ))}
       </section>
     );
@@ -31,7 +31,7 @@ const BlogsSection = () => {
       {data && (
         <>
           {data.posts.map((post, index) => (
-            <BlogCard key={index} post={post} />
+            <BlogsCard key={index} post={post} />
           ))}
         </>
       )}
