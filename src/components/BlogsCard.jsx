@@ -15,7 +15,7 @@ function BlogsCard(props) {
   const { loading = false } = props;
   const { post = undefined } = props;
   return (
-    <Card sx={{ maxWidth: 345, m: 2 }}>
+    <Card sx={{ maxWidth: 345, m: 2, display: "" }}>
       <CardHeader
         avatar={
           loading ? (
@@ -57,7 +57,7 @@ function BlogsCard(props) {
             </Typography>
             {/* //! Blog Slug */}
             <Link to={`/blogs/${post.slug}`}>
-              <Button variant="contained" style={{ width: "50%", marginTop: ".7rem" }}>
+              <Button variant="contained" style={{ width: "60%", marginTop: ".7rem" , fontSize: ".8rem"}}>
                 Read Blog
               </Button>
             </Link>
