@@ -30,6 +30,7 @@ const BlogsSection = () => {
 
   return (
     <section style={{ width: "80%" }}>
+      <h4 className="title">Blogs</h4>
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={2}>
           {data && (

@@ -26,6 +26,10 @@
 body {
   overflow-x: hidden;
 }
+a {
+  color: #fff;
+  text-decoration: none;
+}
 .d-flex {
   display: flex;
 }
@@ -41,7 +45,17 @@ body {
 .container {
   margin: 2rem auto;
 }
-a {
-  color: #fff;
-  text-decoration: none;
+.title{
+  margin: 0 1rem 1rem;
+  position: relative;
+  &::after{
+    content: "";
+    width: 200px;
+    height: 5px;
+    background: #1976D2;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+
+  }
 }

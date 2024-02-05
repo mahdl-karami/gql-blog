@@ -5,6 +5,8 @@ import { BLOG_SIDEBAR_QUERY } from "../graphql/queries/BlogSidebarQuery";
 import BlogsAuthor from "./BlogsAuthor";
 import Error from "./Error";
 import Loading from "./Loading";
+// ? Import MaterialUI
+import Grid from "@mui/material/Unstable_Grid2";
 
 const BlogsSidebar = () => {
   const skeletonCount = [1, 2, 3, 4];
@@ -27,13 +29,16 @@ const BlogsSidebar = () => {
 
   return (
     <aside style={{ width: "20%" }}>
-      {data && (
-        <>
-          {data.authors.map((author, index) => (
-            <BlogsAuthor key={index} author={author} />
-          ))}
-        </>
-      )}
+      <h4 className="title">Authors</h4>
+      <Grid container sx={{ display: "inline-grid" }}>
+        {data && (
+          <>
+            {data.authors.map((author, index) => (
+              <BlogsAuthor key={index} author={author} />
+            ))}
+          </>
+        )}
+      </Grid>
     </aside>
   );
 };
