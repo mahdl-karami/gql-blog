@@ -13,7 +13,7 @@ import Button from "@mui/material/Button";
 
 function BlogCard(props) {
   const { loading = false } = props;
-
+  const { post = undefined } = props;
   return (
     <Card sx={{ maxWidth: 345, m: 2 }}>
       <CardHeader
@@ -22,11 +22,13 @@ function BlogCard(props) {
             <Skeleton animation="wave" variant="circular" width={40} height={40} />
           ) : (
             // ! Author Avatar
-            <Avatar alt="Author Avatar" src="" />
+            <Avatar alt="Author Avatar" src={post.author.avatar.url} />
           )
         }
-        title={loading ? <Skeleton animation="wave" height={10} width="80%" style={{ marginBottom: 6 }} /> : "//! Author Name"}
-        subheader={loading ? <Skeleton animation="wave" height={10} width="40%" /> : "//! Fild"}
+        // ! Author Name
+        title={loading ? <Skeleton animation="wave" height={10} width="80%" style={{ marginBottom: 6 }} /> : post.author.name}
+        // ! Author Fild
+        subheader={loading ? <Skeleton animation="wave" height={10} width="40%" /> : (post.author.fild ? post.author.fild : "Is not specified")}
       />
       {loading ? (
         <Skeleton sx={{ height: "200px" }} animation="wave" variant="rectangular" />
@@ -35,7 +37,7 @@ function BlogCard(props) {
           component="img"
           height="200"
           // ! Blog Cover
-          image="https://pi.tedcdn.com/r/talkstar-photos.s3.amazonaws.com/uploads/72bda89f-9bbf-4685-910a-2f151c4f3a8a/NicolaSturgeon_2019T-embed.jpg?w=512"
+          image={post.postCover.url}
           alt="Nicola Sturgeon on a TED talk stage"
         />
       )}
@@ -51,9 +53,10 @@ function BlogCard(props) {
           <>
             <Typography variant="h6" color="text.black" fontWeight="bold" component="p">
               {/* //! Blog Title */}
-              {"Blog Title - 01"}
+              {post.title}
             </Typography>
-            <Link to="/blogs/blog-slug">
+            {/* //! Blog Slug */}
+            <Link to={`/blogs/${post.slug}`}>
               <Button variant="contained" style={{ width: "50%", marginTop: ".7rem" }}>
                 Read Blog
               </Button>

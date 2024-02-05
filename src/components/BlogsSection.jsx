@@ -1,18 +1,40 @@
+// ! Import Components
 import BlogCard from "./BlogCard";
-
+// ! Import GraphQL
 import { useQuery } from "@apollo/client";
-import { GET_POSTS } from "../graphql/queries/PostQuery";
-import { GET_AUTHORS } from "../graphql/queries/AuthorQuery";
+import { BLOG_CARD_QUERY } from "../graphql/queries/BlogCardQuery";
 
 const BlogsSection = () => {
-  const posts = useQuery(GET_POSTS);
-  const authors = useQuery(GET_AUTHORS);
-  console.log({ posts, authors });
+  const skeletonCount = [1, 2, 3, 4, 5, 6];
+  const {data , loading , error} = useQuery(BLOG_CARD_QUERY);
+
+  if (error) {
+    return <>
+    <h1>Somthing Is Wrrong !</h1>
+    <p>Cant Get Blogs Data</p>
+    </>
+  }
+
+  if (loading) {
+    return (
+      <section style={{ width: "80%" }}>
+        {skeletonCount.map((index) => (
+          <BlogCard key={index} loading />
+        ))}
+      </section>
+    );
+  }
+
   return (
-    <div>
-      <BlogCard loading />
-      <BlogCard />
-    </div>
+    <section style={{ width: "80%" }}>
+      {data && (
+        <>
+          {data.posts.map((post, index) => (
+            <BlogCard key={index} post={post} />
+          ))}
+        </>
+      )}
+    </section>
   );
 };
 

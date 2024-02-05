@@ -1,7 +1,7 @@
 
 const BlogsSidebar = () => {
   return (
-    <div>BlogsSidebar</div>
+    <aside style={{ width: "20%" }}>BlogsSidebar</aside>
   )
 }
 

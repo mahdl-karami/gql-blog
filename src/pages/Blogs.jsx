@@ -3,8 +3,7 @@ import BlogsSidebar from "../components/BlogsSidebar";
 
 const Blogs = () => {
   return (
-    <div>
-      <h1>Blogs Page</h1>
+    <div className="d-flex justify-between">
       <BlogsSection />
       <BlogsSidebar />
     </div>
