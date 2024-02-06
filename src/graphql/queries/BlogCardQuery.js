@@ -2,7 +2,7 @@ import { gql } from "@apollo/client";
 
 export const BLOG_CARD_QUERY = gql`
   query Card {
-  posts {
+  posts(last : 999) {
     author{
       name
       fild
