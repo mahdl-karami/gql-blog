@@ -43,7 +43,7 @@ a {
   margin-left: 0.3rem;
 }
 .container {
-  margin: 2rem auto;
+  margin: 5rem auto;
 }
 .title{
   margin: 0 1rem 1rem;
@@ -56,6 +56,5 @@ a {
     position: absolute;
     bottom: -5px;
     left: 0;
-
   }
 }
