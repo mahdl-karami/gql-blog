@@ -29,16 +29,18 @@ const BlogsSidebar = () => {
 
   return (
     <aside style={{ width: "20%" }}>
-      <h4 className="title">Authors</h4>
-      <Grid container sx={{ display: "inline-grid" }}>
-        {data && (
-          <>
-            {data.authors.map((author, index) => (
-              <BlogsAuthor key={index} author={author} />
-            ))}
-          </>
-        )}
-      </Grid>
+      <div style={{ position: "sticky", top: "5rem" }}>
+        <h4 className="title">Authors</h4>
+        <Grid container sx={{ display: "inline-grid" }}>
+          {data && (
+            <>
+              {data.authors.map((author, index) => (
+                <BlogsAuthor key={index} author={author} />
+              ))}
+            </>
+          )}
+        </Grid>
+      </div>
     </aside>
   );
 };
