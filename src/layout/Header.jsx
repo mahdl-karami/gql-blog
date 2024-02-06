@@ -38,13 +38,13 @@ const Header = (props) => {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <Link to={item.toLowerCase()} style={{ color: "#000" }}>
+          <Link key={item} to={item.toLowerCase()} style={{ color: "#000" }}>
+            <ListItem disablePadding>
+              <ListItemButton sx={{ textAlign: "center" }}>
                 <ListItemText primary={item} />
-              </Link>
-            </ListItemButton>
-          </ListItem>
+              </ListItemButton>
+            </ListItem>
+          </Link>
         ))}
       </List>
     </Box>
