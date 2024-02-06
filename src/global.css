@@ -50,7 +50,7 @@ a {
   position: relative;
   &::after{
     content: "";
-    width: 200px;
+    width: 10vw;
     height: 5px;
     background: #1976D2;
     position: absolute;
