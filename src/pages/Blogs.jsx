@@ -1,12 +1,16 @@
 import BlogsSection from "../components/BlogsSection";
 import BlogsSidebar from "../components/BlogsSidebar";
 
+// ? Import MaterialUI
+import Box from "@mui/material/Box";
+
+
 const Blogs = () => {
   return (
-    <div className="d-flex justify-between">
+    <Box display="flex" justifyContent="space-between">
       <BlogsSection />
       <BlogsSidebar />
-    </div>
+    </Box>
   );
 };
 
