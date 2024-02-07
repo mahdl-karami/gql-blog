@@ -5,6 +5,7 @@ import Layout from "./layout/Layout";
 import Blogs from "./pages/Blogs";
 import Authors from "./pages/Authors";
 import NoPage from "./pages/NoPage";
+import AuthorProfile from "./pages/AuthorProfile";
 
 const App = () => {
   return (
@@ -14,7 +15,9 @@ const App = () => {
           <Route path="/" element={<Navigate to="/blogs" />} />
           <Route path="/home" element={<Navigate to="/blogs" />} />
           <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blogs/:slug" element={<Blogs />} />
           <Route path="/authors" element={<Authors />} />
+          <Route path="/authors/:slug" element={<AuthorProfile />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
