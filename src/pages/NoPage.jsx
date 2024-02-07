@@ -1,12 +1,8 @@
-import Background from "../assets/NoPage.jpg";
 const NoPage = () => {
   return (
-    <>
-      <img src={Background} alt="NoPage Background" className="no-page-bg" />
-      <div style={{ position: "absolute", width: "100vh", textAlign: "center" }}>
-        <p
-          style={{
-            textShadow: `
+    <p
+      style={{
+        textShadow: `
             -14px 14px 0 rgba(50, 153, 240, 0.4),		
             -1px 1px 0 #0372b8,
             -2px 2px 0 #0372b8,
@@ -24,14 +20,13 @@ const NoPage = () => {
             -14px 14px 0 #0372b8,
             -15px 15px 35px rgba(0, 0, 0, 0.2),
             -35px 15px 10px rgba(0, 0, 0, 0.1)`,
-            fontSize: "4rem",
-            color: " rgba(95, 192, 254, 0.6)",
-          }}
-        >
-          404 Page Not Found
-        </p>
-      </div>
-    </>
+        fontSize: "4rem",
+        color: " rgba(95, 192, 254, 0.6)",
+        padding: "2rem",
+      }}
+    >
+      404 Page Not Found
+    </p>
   );
 };
 
