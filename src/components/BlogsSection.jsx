@@ -33,15 +33,11 @@ const BlogsSection = () => {
       <h4 className="title">Blogs</h4>
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={2}>
-          {data && (
-            <>
-              {data.posts.map((post, index) => (
-                <Grid key={index} item lg={3} md={4} sm={6} xs={12}>
-                  <BlogsCard post={post} />
-                </Grid>
-              ))}
-            </>
-          )}
+          {data.posts.map((post, index) => (
+            <Grid key={index} lg={3} md={4} sm={6} xs={12}>
+              <BlogsCard post={post} />
+            </Grid>
+          ))}
         </Grid>
       </Box>
     </section>
