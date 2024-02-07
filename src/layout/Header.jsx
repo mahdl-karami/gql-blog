@@ -4,13 +4,8 @@ import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
-import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -18,6 +13,9 @@ import Button from "@mui/material/Button";
 
 // ! Import Router Link
 import { Link } from "react-router-dom";
+// ! Import Components and Helpers
+import HeaderDrawer from "../components/header/Drawer";
+import handleDrawerToggle from "../Helpers/handleDrawerToggle";
 
 const drawerWidth = 240;
 const navItems = ["Home", "Blogs", "Authors"];
@@ -26,32 +24,6 @@ const Header = (props) => {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
-  const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
-  };
-
-  const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Link to="/">
-        <Typography variant="h6" sx={{ my: 2 }}>
-          GraphQL Blog
-        </Typography>
-      </Link>
-      <Divider />
-      <List>
-        {navItems.map((item) => (
-          <Link key={item} to={item.toLowerCase()} style={{ color: "#000" }}>
-            <ListItem disablePadding>
-              <ListItemButton sx={{ textAlign: "center" }}>
-                <ListItemText primary={item} />
-              </ListItemButton>
-            </ListItem>
-          </Link>
-        ))}
-      </List>
-    </Box>
-  );
-
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
@@ -59,7 +31,7 @@ const Header = (props) => {
       <CssBaseline />
       <AppBar component="nav">
         <Toolbar>
-          <IconButton color="inherit" aria-label="open drawer" edge="start" onClick={handleDrawerToggle} sx={{ mr: 2, display: { sm: "none" } }}>
+          <IconButton color="inherit" aria-label="open drawer" edge="start" onClick={()=> handleDrawerToggle(setMobileOpen)} sx={{ mr: 2, display: { sm: "none" } }}>
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}>
@@ -90,7 +62,7 @@ const Header = (props) => {
             "& .MuiDrawer-paper": { boxSizing: "border-box", width: drawerWidth },
           }}
         >
-          {drawer}
+          {<HeaderDrawer handleDrawerToggle={handleDrawerToggle} navItems={navItems} setMobileOpen={setMobileOpen} />}
         </Drawer>
       </nav>
     </Box>
