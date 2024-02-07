@@ -9,8 +9,8 @@ import Box from "@mui/system/Box";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 // ! Import Components
-import Error from "../components/Error";
-import AuthorProfileCard from "../components/AuthorProfileCard";
+import Error from "../components/shared/Error";
+import AuthorProfileCard from "../components/SlugPages/AuthorProfileCard";
 
 const AuthorProfile = () => {
   const { slug = "/" } = useParams();
@@ -68,7 +68,7 @@ const AuthorProfile = () => {
             <Grid container spacing={2}>
               {data.author.posts &&
                 data.author.posts.map((post, index) => (
-                  <Grid key={index} item xs={12} md={6} lg={4} >
+                  <Grid key={index} item xs={12} md={6} lg={4}>
                     <AuthorProfileCard post={post} />
                   </Grid>
                 ))}

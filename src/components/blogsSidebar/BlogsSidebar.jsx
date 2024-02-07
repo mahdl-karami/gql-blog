@@ -1,10 +1,10 @@
 // ! Import GraphQL
 import { useQuery } from "@apollo/client";
-import { BLOG_SIDEBAR_QUERY } from "../graphql/queries/BlogSidebarQuery";
+import { BLOG_SIDEBAR_QUERY } from "../../graphql/queries/BlogSidebarQuery";
 // ! Import Components
 import BlogsAuthor from "./BlogsAuthor";
-import Error from "./Error";
-import Loading from "./Loading";
+import Error from "../shared/Error";
+import Loading from "../shared/Loading";
 // ? Import MaterialUI
 import Grid from "@mui/material/Unstable_Grid2";
 

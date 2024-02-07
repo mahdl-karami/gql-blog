@@ -12,7 +12,7 @@ const Footer = () => {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <Link style={{color: "#fff"}} to="https://github.com/mahdl-karami">
+          <Link style={{ color: "#fff" }} to="https://github.com/mahdl-karami">
             <h3 className="d-flex align-center">
               Developer
               <ImGithub className="ml-3" />

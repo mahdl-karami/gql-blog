@@ -1,10 +1,10 @@
 // ! Import Components
 import BlogsCard from "./BlogsCard";
-import Error from "./Error";
-import Loading from "./Loading";
+import Error from "../shared/Error";
+import Loading from "../shared/Loading";
 // ! Import GraphQL
 import { useQuery } from "@apollo/client";
-import { BLOG_CARD_QUERY } from "../graphql/queries/BlogCardQuery";
+import { BLOG_CARD_QUERY } from "../../graphql/queries/BlogCardQuery";
 // ? Import MaterialUI
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Unstable_Grid2";

@@ -9,7 +9,7 @@ const Blog = () => {
       slug,
     },
   });
-  console.log(data)
+  console.log(data);
   return <div>Blog</div>;
 };
 

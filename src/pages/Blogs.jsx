@@ -1,9 +1,8 @@
-import BlogsSection from "../components/BlogsSection";
-import BlogsSidebar from "../components/BlogsSidebar";
+import BlogsSection from "../components/blogsSection/BlogsSection";
+import BlogsSidebar from "../components/blogsSidebar/BlogsSidebar";
 
 // ? Import MaterialUI
 import Box from "@mui/material/Box";
-
 
 const Blogs = () => {
   return (
