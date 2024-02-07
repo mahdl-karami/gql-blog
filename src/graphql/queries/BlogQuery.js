@@ -5,16 +5,19 @@ export const GET_BLOG_QUERY = gql`
     post(where: { slug: $slug }) {
       author {
         name
-        posts {
-          title
-        }
+        fild
       }
-      id
       slug
       title
+      content {
+        html
+      }
       comments {
         email
         name
+      }
+      postCover {
+        url
       }
     }
   }
