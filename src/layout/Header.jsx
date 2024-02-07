@@ -20,7 +20,7 @@ import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 
 const drawerWidth = 240;
-const navItems = ["Home", "Blogs", "Authors", "404 Page"];
+const navItems = ["Home", "Blogs", "Authors"];
 
 const Header = (props) => {
   const { window } = props;
@@ -32,9 +32,11 @@ const Header = (props) => {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        GraphQL Blog
-      </Typography>
+      <Link to="/">
+        <Typography variant="h6" sx={{ my: 2 }}>
+          GraphQL Blog
+        </Typography>
+      </Link>
       <Divider />
       <List>
         {navItems.map((item) => (
@@ -61,7 +63,9 @@ const Header = (props) => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}>
-            GraphQL Blog
+            <Link style={{ color: "#fff" }} to="/">
+              GraphQL Blog
+            </Link>
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
@@ -94,10 +98,6 @@ const Header = (props) => {
 };
 
 Header.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
   window: PropTypes.func,
 };
 
