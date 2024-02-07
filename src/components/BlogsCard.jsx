@@ -16,20 +16,22 @@ function BlogsCard(props) {
   const { post = undefined } = props;
   return (
     <Card sx={{ maxWidth: 345, m: 2, display: "" }}>
-      <CardHeader
-        avatar={
-          loading ? (
-            <Skeleton animation="wave" variant="circular" width={40} height={40} />
-          ) : (
-            // ! Author Avatar
-            <Avatar alt="Author Avatar" src={post.author.avatar.url} />
-          )
-        }
-        // ! Author Name
-        title={loading ? <Skeleton animation="wave" height={10} width="80%" style={{ marginBottom: 6 }} /> : post.author.name}
-        // ! Author Fild
-        subheader={loading ? <Skeleton animation="wave" height={10} width="40%" /> : (post.author.fild ? post.author.fild : "Is not specified")}
-      />
+      <Link to={loading ? "" : `/authors/${post.author.slug}`}>
+        <CardHeader
+          avatar={
+            loading ? (
+              <Skeleton animation="wave" variant="circular" width={40} height={40} />
+            ) : (
+              // ! Author Avatar
+              <Avatar alt="Author Avatar" src={post.author.avatar.url} />
+            )
+          }
+          // ! Author Name
+          title={loading ? <Skeleton animation="wave" height={10} width="80%" style={{ marginBottom: 6 }} /> : post.author.name}
+          // ! Author Fild
+          subheader={loading ? <Skeleton animation="wave" height={10} width="40%" /> : post.author.fild ? post.author.fild : "Is not specified"}
+        />
+      </Link>
       {loading ? (
         <Skeleton sx={{ height: "200px" }} animation="wave" variant="rectangular" />
       ) : (
@@ -57,7 +59,7 @@ function BlogsCard(props) {
             </Typography>
             {/* //! Blog Slug */}
             <Link to={`/blogs/${post.slug}`}>
-              <Button variant="contained" style={{ width: "60%", marginTop: ".7rem" , fontSize: ".8rem"}}>
+              <Button variant="contained" style={{ width: "60%", marginTop: ".7rem", fontSize: ".8rem" }}>
                 Read Blog
               </Button>
             </Link>

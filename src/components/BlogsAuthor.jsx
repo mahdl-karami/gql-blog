@@ -10,11 +10,10 @@ import Skeleton from "@mui/material/Skeleton";
 function BlogsAuthor(props) {
   const { loading = false } = props;
   const { author = undefined } = props;
-  console.log(author);
   return (
     <>
       <Card sx={{ m: 2, display: { xs: "none", md: "block" } }}>
-        <Link to={`/authors/${author.slug}`}>
+        <Link to={loading ? "" : `/authors/${author.slug}`}>
           <CardHeader
             avatar={
               loading ? (
@@ -38,7 +37,7 @@ function BlogsAuthor(props) {
         </Link>
       </Card>
       <Card sx={{ m: 2, p: ".4rem", width: "fit-content", display: { xs: "flex", md: "none" } }}>
-        <Link to={`/authors/${author.slug}`}>
+        <Link to={loading ? "" : `/authors/${author.slug}`}>
           {loading ? (
             <Skeleton animation="wave" variant="circular" width={40} height={40} />
           ) : (
