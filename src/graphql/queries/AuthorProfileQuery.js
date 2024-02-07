@@ -10,11 +10,11 @@ export const GET_PROFILE_QUERY = gql`
         url
       }
       info {
-        text
+        html
       }
       posts {
         postCover {
-          id
+          url
         }
         title
         slug
