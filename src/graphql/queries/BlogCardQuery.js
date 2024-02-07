@@ -6,6 +6,7 @@ export const BLOG_CARD_QUERY = gql`
     author{
       name
       fild
+      slug
       avatar{
         url
       }

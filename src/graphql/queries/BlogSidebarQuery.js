@@ -5,6 +5,7 @@ export const BLOG_SIDEBAR_QUERY = gql`
     authors {
       name
       fild
+      slug
       avatar {
         url
       }
