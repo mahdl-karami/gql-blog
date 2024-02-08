@@ -11,6 +11,7 @@ import Grid from "@mui/material/Grid";
 // ! Import Components
 import Error from "../components/shared/Error";
 import AuthorProfileCard from "../components/SlugPages/AuthorProfileCard";
+import Loading from "../components/shared/Loading";
 
 const AuthorProfile = () => {
   const { slug = "/" } = useParams();
@@ -31,6 +32,7 @@ const AuthorProfile = () => {
       {loading ? (
         // ! Loading Skeleton
         <>
+          <Loading />
           <Skeleton variant="circular" animation="wave" width="300px" height="300px" />
           <Typography variant="h2" component="div">
             <Skeleton width="500px" />
