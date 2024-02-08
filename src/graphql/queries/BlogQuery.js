@@ -6,6 +6,10 @@ export const GET_BLOG_QUERY = gql`
       author {
         name
         fild
+        slug
+        avatar{
+          url
+        }
       }
       slug
       title
