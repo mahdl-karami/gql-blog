@@ -16,6 +16,7 @@ import Grid from "@mui/material/Grid";
 import Loading from "../components/shared/Loading";
 // ! Import lybraries
 import { Link } from "react-router-dom";
+import Error from "../components/shared/Error";
 
 const Blog = () => {
   const { slug = "/" } = useParams();
@@ -24,7 +25,11 @@ const Blog = () => {
       slug,
     },
   });
-  console.log(data);
+
+  if (errors) {
+    return <Error error={errors.massege} />;
+  }
+
   return (
     <Box component="div" display="flex" alignItems="center" p="4rem 2rem" flexDirection="column">
       {
