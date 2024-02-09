@@ -21,9 +21,14 @@ const BlogsSection = () => {
     return (
       <section style={{ width: "80%" }}>
         <Loading />
-        {skeletonCount.map((index) => (
-          <BlogsCard key={index} loading />
-        ))}
+        <h4 className="title">Blogs</h4>
+        <Grid container spacing={2}>
+          {skeletonCount.map((index) => (
+            <Grid key={index} lg={3} md={4} sm={6} xs={12}>
+              <BlogsCard loading />
+            </Grid>
+          ))}
+        </Grid>
       </section>
     );
   }

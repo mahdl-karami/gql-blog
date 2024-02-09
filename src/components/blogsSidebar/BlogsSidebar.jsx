@@ -20,6 +20,7 @@ const BlogsSidebar = () => {
     return (
       <aside style={{ width: "20%" }}>
         <Loading />
+        <h4 className="title">Authors</h4>
         {skeletonCount.map((index) => (
           <BlogsAuthor key={index} loading />
         ))}
