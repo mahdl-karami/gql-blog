@@ -16,6 +16,7 @@ import Loading from "../components/shared/Loading";
 // ! Import lybraries
 import { Link } from "react-router-dom";
 import Error from "../components/shared/Error";
+import CommentsForm from "../components/comments/Form";
 
 const Blog = () => {
   const { slug = "/" } = useParams();
@@ -77,6 +78,9 @@ const Blog = () => {
             <Typography variant="p" component="p" width="80%" py="1rem" fontWeight="400">
               <span dangerouslySetInnerHTML={{ __html: data.post.content.html }}></span>
             </Typography>
+            <Box width="80%">
+              <CommentsForm slug={data.post.slug}/>
+            </Box>
           </>
         )
       }
