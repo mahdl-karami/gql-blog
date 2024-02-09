@@ -17,6 +17,7 @@ import Loading from "../components/shared/Loading";
 import { Link } from "react-router-dom";
 import Error from "../components/shared/Error";
 import CommentsForm from "../components/comments/Form";
+import CommentsList from "../components/comments/CommentsList";
 
 const Blog = () => {
   const { slug = "/" } = useParams();
@@ -79,7 +80,11 @@ const Blog = () => {
               <span dangerouslySetInnerHTML={{ __html: data.post.content.html }}></span>
             </Typography>
             <Box width="80%">
-              <CommentsForm slug={data.post.slug}/>
+              <CommentsForm slug={data.post.slug} />
+            </Box>
+            <Box width="80%">
+              <h4>Comments</h4>
+              {loading ? null : <>{data.post.comments.length ? <CommentsList comments={data.post.comments} /> : <p>No Comments</p>}</>}
             </Box>
           </>
         )

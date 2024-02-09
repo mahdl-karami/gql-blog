@@ -19,6 +19,7 @@ export const GET_BLOG_QUERY = gql`
       comments {
         email
         name
+        text
       }
       postCover {
         url
