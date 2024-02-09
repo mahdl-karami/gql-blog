@@ -1,7 +1,8 @@
+import { useState } from "react";
 // ? MaterialUI
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import { useState } from "react";
+import CommentsSnackBar from "./CommentsSnackBar";
 // ! Apollo
 import { useMutation } from "@apollo/client";
 import CREATE_COMMENT from "../../graphql/mutation/CreateCommentMutation";
@@ -16,6 +17,8 @@ const CommentsForm = ({ slug }) => {
   const changeHandler = ({ target: { name, value } }) => {
     setForm({ ...form, [name]: value });
   };
+  // ! Called For SnackBar Opening
+  const [called, setCalled] = useState(false);
   // ! useMutation Hook (ApolloClient)
   const [sendComment, { errors }] = useMutation(CREATE_COMMENT, {
     variables: {
@@ -35,6 +38,7 @@ const CommentsForm = ({ slug }) => {
       email: "",
       comment: "",
     });
+    setCalled(true);
   };
   return (
     <form onSubmit={subHandler}>
@@ -55,6 +59,7 @@ const CommentsForm = ({ slug }) => {
       <Button type="submit" variant="contained" sx={{ my: "1rem" }}>
         Send
       </Button>
+      {called ? <CommentsSnackBar setCalled={setCalled} /> : null}
     </form>
   );
 };
