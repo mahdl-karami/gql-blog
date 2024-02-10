@@ -28,14 +28,14 @@ const AuthorProfile = () => {
   }
 
   return (
-    <Box component="div" display="flex" alignItems="center" p="4rem 2rem" flexDirection="column">
+    <Box component="div" display="flex" alignItems="center" py="1rem" flexDirection="column">
       {loading ? (
         // ! Loading Skeleton
         <>
           <Loading />
           <Skeleton variant="circular" animation="wave" width="300px" height="300px" />
           <Typography variant="h2" component="div">
-            <Skeleton width="500px" />
+            <Skeleton sx={{ width: { xs: "300px", lg: "500px" } }} />
           </Typography>
           <Typography variant="p" component="div">
             <Skeleton width="200px" />
@@ -60,13 +60,13 @@ const AuthorProfile = () => {
           <Typography variant="h5" component="p">
             {data.author.fild ? data.author.fild : "The fild is not specified"}
           </Typography>
-          <Typography variant="h6" component="p" width="70%">
+          <Typography variant="h6" component="p" width="70%" sx={{ width: { xs: "90%", lg: "70%" } }}>
             <span dangerouslySetInnerHTML={{ __html: data.author.info.html }}></span>
           </Typography>
           <Typography variant="h5" component="h5">
             Author Blogs :
           </Typography>
-          <Box width="70%">
+          <Box width="70%" sx={{ width: { xs: "90%", lg: "70%" } }}>
             <Grid container spacing={2}>
               {data.author.posts &&
                 data.author.posts.map((post, index) => (
