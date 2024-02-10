@@ -32,7 +32,7 @@ const Blog = () => {
   }
 
   return (
-    <Box component="div" display="flex" alignItems="center" p="4rem 2rem" flexDirection="column">
+    <Box component="div" display="flex" alignItems="center" py="2rem" flexDirection="column" width="100%">
       {
         // ! Loading Skeleton
         loading ? (
@@ -41,9 +41,9 @@ const Blog = () => {
             <Typography variant="h1" component="div" width="80%">
               <Skeleton width="" animation="wave" />
             </Typography>
-            <Skeleton variant="rounded" animation="wave" width="80%" height="50vh" />
+            <Skeleton variant="rounded" animation="wave" width="80%" sx={{ height: { xs: "20vh", md: "40vh", lg: "50vh" } }} />
             <Typography variant="h1" component="div" width="80%">
-              <Skeleton width="" animation="wave" />
+              <Skeleton animation="wave" />
             </Typography>
             <Typography variant="h2" component="div" width="80%" display="flex" justifyContent="start">
               <Skeleton width="40%" animation="wave" />
@@ -57,10 +57,12 @@ const Blog = () => {
           </>
         ) : (
           <>
-            <Typography variant="h3" component="h3" width="80%" py="1rem" fontWeight="500" color="primary">
+            <Typography variant="h3" component="h3" width="80%" py="1rem" fontWeight="500" color="primary" fontSize="2.5rem">
               {data.post.title}
             </Typography>
-            <img src={data.post.postCover.url} alt="Blog Cover" width="80%" style={{ height: "50vh", borderRadius: "10px" }} />
+            <Box width="80%" sx={{ height: { xs: "35vh", md: "45vh", lg: "50vh" } }} justifyContent="center">
+              <img src={data.post.postCover.url} alt="Blog Cover" width="100%" height="100%" style={{ borderRadius: "10px" }} />
+            </Box>
             <Box width="80%" justifyContent="start">
               <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
                 <Link to={`/authors/${data.post.author.slug}`}>
