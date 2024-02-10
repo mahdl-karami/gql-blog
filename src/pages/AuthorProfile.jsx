@@ -20,8 +20,7 @@ const AuthorProfile = () => {
       slug,
     },
   });
-  console.log(data);
-
+  
   // ! Error Handling
   if (errors) {
     return <Error />;
