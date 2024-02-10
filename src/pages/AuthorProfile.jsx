@@ -60,13 +60,13 @@ const AuthorProfile = () => {
           <Typography variant="h5" component="p">
             {data.author.fild ? data.author.fild : "The fild is not specified"}
           </Typography>
-          <Typography variant="h6" component="p" width="70%" sx={{ width: { xs: "90%", lg: "70%" } }}>
+          <Typography variant="h6" component="p" sx={{ width: { xs: "90%", lg: "70%" } }}>
             <span dangerouslySetInnerHTML={{ __html: data.author.info.html }}></span>
           </Typography>
           <Typography variant="h5" component="h5">
             Author Blogs :
           </Typography>
-          <Box width="70%" sx={{ width: { xs: "90%", lg: "70%" } }}>
+          <Box sx={{ width: { xs: "90%", lg: "70%" } }}>
             <Grid container spacing={2}>
               {data.author.posts &&
                 data.author.posts.map((post, index) => (
